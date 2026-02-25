@@ -6,6 +6,13 @@
 /* ---------- RESET & BASE ---------- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* Desativa hifenização automática do browser em todo o site */
+* {
+  hyphens: none;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+}
+
 :root {
   --purple-primary:  #7C3AED;
   --purple-dark:     #1e1b4b;
@@ -298,6 +305,11 @@ ul { list-style: none; }
   color: var(--white);
   line-height: 1.15;
   margin-bottom: 1.2rem;
+  hyphens: none;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  word-break: normal;
+  overflow-wrap: normal;
 }
 
 .hero__title--accent { color: var(--purple-light); }
@@ -378,6 +390,8 @@ ul { list-style: none; }
   font-size: .82rem;
   color: rgba(255,255,255,0.88);
   text-align: center;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 /* ============================================================
@@ -1392,7 +1406,6 @@ img, video, iframe, embed, object {
   }
 
   /* Textos longos nunca ultrapassam a largura */
-  .hero__title,
   .hero__subtitle,
   .section__title,
   .section__desc,
@@ -1404,6 +1417,15 @@ img, video, iframe, embed, object {
   .contact-item a {
     word-break: break-word;
     overflow-wrap: break-word;
+  }
+
+  /* Título hero: nunca hifenizar — palavra deve quebrar de linha inteira */
+  .hero__title {
+    hyphens: none;
+    -webkit-hyphens: none;
+    -ms-hyphens: none;
+    word-break: normal;
+    overflow-wrap: normal;
   }
 
   /* Carrossel: contenção total */
