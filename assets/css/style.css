@@ -1076,7 +1076,6 @@ ul { list-style: none; }
    PREVENÇÃO GLOBAL DE OVERFLOW HORIZONTAL
    ============================================================ */
 section,
-header,
 footer,
 .container,
 .highlights,
@@ -1188,13 +1187,13 @@ img, video, iframe, embed, object {
     flex-direction: column;
     padding: 5rem 2rem 2rem;
     gap: 1.8rem;
-    z-index: 999;
+    z-index: 1002;
     box-shadow: -4px 0 30px rgba(0,0,0,0.3);
     overflow-y: auto;
     overflow-x: hidden;
   }
   .navbar__menu.open { display: flex; }
-  .navbar__toggle    { display: flex; z-index: 1000; }
+  .navbar__toggle    { display: flex; z-index: 1003; }
   .nav-link          { font-size: 1rem; }
 
   /* Mercado: 1 coluna */

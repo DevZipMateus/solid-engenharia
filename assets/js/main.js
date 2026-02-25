@@ -30,9 +30,9 @@ document.querySelectorAll('.nav-link').forEach(link => {
   });
 });
 
-// Fecha menu ao clicar fora
+// Fecha menu ao clicar fora (menu agora é irmão do navbar no DOM)
 document.addEventListener('click', (e) => {
-  if (!navbar.contains(e.target)) {
+  if (!navbar.contains(e.target) && !navMenu.contains(e.target)) {
     navMenu.classList.remove('open');
     navToggle.querySelector('i').className = 'fas fa-bars';
   }
