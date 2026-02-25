@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gerenciar Imagens — Solid Engenharia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    :root {
+      --purple: #7C3AED;
+      --purple-dark: #1e1b4b;
+      --purple-light: #8B5CF6;
+      --white: #fff;
+      --gray-50: #F9FAFB;
+      --gray-100: #F3F4F6;
+      --gray-300: #D1D5DB;
+      --gray-500: #6B7280;
+      --gray-900: #111827;
+      --radius: 12px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: var(--gray-50); color: var(--gray-900); }
+
+    /* HEADER */
+    .header {
+      background: var(--purple-dark);
+      padding: 1.2rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .header__logo { font-size: 1.3rem; font-weight: 900; color: #fff; letter-spacing: .05em; }
+    .header__logo span { color: var(--purple-light); }
+    .header__back { color: rgba(255,255,255,0.7); font-size: .9rem; text-decoration: none; transition: color .2s; }
+    .header__back:hover { color: #fff; }
+
+    /* CONTAINER */
+    .container { max-width: 1100px; margin: 0 auto; padding: 2.5rem 1.5rem; }
+
+    /* PAGE TITLE */
+    .page-title { font-size: 1.8rem; font-weight: 800; margin-bottom: .4rem; }
+    .page-subtitle { color: var(--gray-500); margin-bottom: 2.5rem; font-size: .95rem; }
+
+    /* SLOTS GRID */
+    .slots { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
+
+    .slot-card {
+      background: var(--white);
+      border: 2px dashed var(--gray-300);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: border-color .2s, box-shadow .2s;
+      cursor: pointer;
+    }
+    .slot-card:hover { border-color: var(--purple); box-shadow: 0 4px 20px rgba(124,58,237,0.15); }
+    .slot-card.has-image { border-style: solid; border-color: var(--purple); }
+
+    .slot-card__preview {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .slot-card__placeholder {
+      height: 180px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      color: var(--gray-500);
+      font-size: .9rem;
+    }
+    .slot-card__placeholder i { font-size: 2rem; color: var(--gray-300); }
+
+    .slot-card__info {
+      padding: 1rem 1.2rem;
+      border-top: 1px solid var(--gray-100);
+    }
+    .slot-card__name {
+      font-size: .85rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: .2rem;
+    }
+    .slot-card__desc {
+      font-size: .78rem;
+      color: var(--gray-500);
+      margin-bottom: .7rem;
+    }
+    .slot-card__size {
+      display: inline-block;
+      background: rgba(124,58,237,0.1);
+      color: var(--purple);
+      font-size: .72rem;
+      font-weight: 600;
+      padding: .2rem .6rem;
+      border-radius: 50px;
+    }
+    .slot-card__filename {
+      font-size: .75rem;
+      color: var(--purple);
+      margin-top: .4rem;
+      font-weight: 600;
+      word-break: break-all;
+    }
+    .slot-card__actions {
+      display: flex;
+      gap: .5rem;
+      margin-top: .7rem;
+    }
+    .btn-sm {
+      display: inline-flex;
+      align-items: center;
+      gap: .3rem;
+      padding: .35rem .8rem;
+      border-radius: 50px;
+      font-size: .78rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all .2s;
+    }
+    .btn-sm--primary { background: var(--purple); color: #fff; }
+    .btn-sm--primary:hover { background: var(--purple-light); }
+    .btn-sm--danger { background: #FEE2E2; color: #DC2626; }
+    .btn-sm--danger:hover { background: #FECACA; }
+
+    /* INSTRUÇÕES */
+    .instructions {
+      background: var(--white);
+      border: 1px solid var(--gray-100);
+      border-radius: var(--radius);
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+    .instructions h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; display: flex; align-items: center; gap: .5rem; }
+    .instructions h2 i { color: var(--purple); }
+    .step { display: flex; gap: .8rem; margin-bottom: .8rem; align-items: flex-start; }
+    .step__num {
+      width: 26px; height: 26px;
+      background: var(--purple);
+      color: #fff;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .75rem; font-weight: 700;
+      flex-shrink: 0;
+    }
+    .step p { font-size: .9rem; color: var(--gray-500); line-height: 1.5; }
+    .step code {
+      background: var(--gray-100);
+      padding: .1rem .4rem;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: .85rem;
+      color: var(--purple);
+    }
+
+    /* TOAST */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--purple-dark);
+      color: #fff;
+      padding: .8rem 1.5rem;
+      border-radius: var(--radius);
+      font-size: .9rem;
+      font-weight: 500;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      gap: .5rem;
+    }
+    .toast.show { display: flex; animation: fadeInUp .3s ease; }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="header__logo">SOLID<span>.</span> <small style="font-weight:400; font-size:.7rem; opacity:.6; margin-left:.4rem;">Admin de Imagens</small></div>
+    <a href="../index.html" class="header__back"><i class="fas fa-arrow-left"></i> Ver site</a>
+  </header>
+
+  <div class="container">
+    <h1 class="page-title">Gerenciar Imagens do Site</h1>
+    <p class="page-subtitle">Selecione as imagens para cada seção e salve-as na pasta correta do projeto.</p>
+
+    <!-- INSTRUÇÕES -->
+    <div class="instructions">
+      <h2><i class="fas fa-info-circle"></i> Como usar</h2>
+      <div class="step">
+        <div class="step__num">1</div>
+        <p>Clique em <strong>"Selecionar imagem"</strong> no card de cada seção para escolher uma foto do seu computador.</p>
+      </div>
+      <div class="step">
+        <div class="step__num">2</div>
+        <p>Visualize o preview da imagem. Quando estiver satisfeito, <strong>copie o arquivo</strong> para a pasta <code>assets/images/</code> do projeto com o nome indicado no card.</p>
+      </div>
+      <div class="step">
+        <div class="step__num">3</div>
+        <p>O site carregará a imagem automaticamente a partir do caminho <code>assets/images/nome-do-arquivo.jpg</code>.</p>
+      </div>
+      <div class="step">
+        <div class="step__num">4</div>
+        <p>Para a seção Hero, o arquivo deve se chamar <code>hero-bg.jpg</code>. Para o logo, <code>logo.png</code> (fundo transparente recomendado).</p>
+      </div>
+    </div>
+
+    <!-- SLOTS DE IMAGEM -->
+    <div class="slots" id="slotsGrid"></div>
+  </div>
+
+  <div class="toast" id="toast">
+    <i class="fas fa-check-circle"></i>
+    <span id="toastMsg">Imagem selecionada!</span>
+  </div>
+
+  <script>
+    const slots = [
+      {
+        id: 'hero-bg',
+        name: 'Hero — Fundo',
+        desc: 'Imagem de fundo da seção principal do site (topo). Deve transmitir construção, engenharia ou obras industriais.',
+        file: 'hero-bg.jpg',
+        size: '1920 × 1080px ou maior',
+        cssPath: "url('../images/hero-bg.jpg')"
+      },
+      {
+        id: 'logo',
+        name: 'Logo da Empresa',
+        desc: 'Logotipo oficial da Solid Engenharia. Fundo transparente (PNG) é recomendado.',
+        file: 'logo.png',
+        size: 'Mín. 300px de largura',
+        cssPath: null
+      },
+      {
+        id: 'sobre-foto',
+        name: 'Sobre — Foto da empresa',
+        desc: 'Foto para ilustrar a seção "Sobre". Pode ser da equipe, escritório ou uma obra.',
+        file: 'sobre-foto.jpg',
+        size: '800 × 600px',
+        cssPath: null
+      },
+      {
+        id: 'obra-1',
+        name: 'Obra / Projeto 1',
+        desc: 'Foto de uma obra ou projeto executado pela empresa.',
+        file: 'obra-1.jpg',
+        size: '800 × 600px',
+        cssPath: null
+      },
+      {
+        id: 'obra-2',
+        name: 'Obra / Projeto 2',
+        desc: 'Foto de outra obra ou projeto executado.',
+        file: 'obra-2.jpg',
+        size: '800 × 600px',
+        cssPath: null
+      },
+      {
+        id: 'obra-3',
+        name: 'Obra / Projeto 3',
+        desc: 'Foto de outra obra ou projeto executado.',
+        file: 'obra-3.jpg',
+        size: '800 × 600px',
+        cssPath: null
+      },
+      {
+        id: 'mercado-foto',
+        name: 'Mercado de Atuação — Imagem',
+        desc: 'Imagem para a seção de Mercado de Atuação. Galpão, indústria ou construção comercial.',
+        file: 'mercado-foto.jpg',
+        size: '900 × 700px',
+        cssPath: null
+      },
+      {
+        id: 'favicon',
+        name: 'Favicon (ícone do site)',
+        desc: 'Ícone pequeno que aparece na aba do navegador. Geralmente a versão simplificada do logo.',
+        file: 'favicon.png',
+        size: '64 × 64px',
+        cssPath: null
+      }
+    ];
+
+    const previews = {};
+
+    function renderSlots() {
+      const grid = document.getElementById('slotsGrid');
+      grid.innerHTML = '';
+
+      slots.forEach(slot => {
+        const hasImage = !!previews[slot.id];
+        const card = document.createElement('div');
+        card.className = 'slot-card' + (hasImage ? ' has-image' : '');
+        card.dataset.id = slot.id;
+
+        card.innerHTML = `
+          ${hasImage
+            ? `<img src="${previews[slot.id]}" class="slot-card__preview" alt="${slot.name}" />`
+            : `<div class="slot-card__placeholder">
+                <i class="fas fa-image"></i>
+                <span>Sem imagem</span>
+               </div>`
+          }
+          <div class="slot-card__info">
+            <div class="slot-card__name">${slot.name}</div>
+            <div class="slot-card__desc">${slot.desc}</div>
+            <span class="slot-card__size"><i class="fas fa-ruler-combined"></i> ${slot.size}</span>
+            <div class="slot-card__filename">Salvar como: <strong>${slot.file}</strong></div>
+            <div class="slot-card__actions">
+              <button class="btn-sm btn-sm--primary" onclick="selectImage('${slot.id}')">
+                <i class="fas fa-folder-open"></i> ${hasImage ? 'Trocar' : 'Selecionar'}
+              </button>
+              ${hasImage ? `<button class="btn-sm btn-sm--danger" onclick="removeImage('${slot.id}')">
+                <i class="fas fa-trash"></i> Remover
+              </button>` : ''}
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    function selectImage(slotId) {
+      const input = document.createElement('input');
+      input.type = 'file';
+      input.accept = 'image/*';
+      input.onchange = (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = (ev) => {
+          previews[slotId] = ev.target.result;
+          renderSlots();
+          showToast(`Preview de "${slots.find(s => s.id === slotId).name}" carregado! Salve o arquivo como: ${slots.find(s => s.id === slotId).file}`);
+        };
+        reader.readAsDataURL(file);
+      };
+      input.click();
+    }
+
+    function removeImage(slotId) {
+      delete previews[slotId];
+      renderSlots();
+      showToast('Imagem removida do preview.');
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toastMsg').textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 4000);
+    }
+
+    renderSlots();
+  </script>
+
+</body>
+</html>

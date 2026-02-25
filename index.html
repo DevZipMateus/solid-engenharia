@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Solid Engenharia & Estruturas LTDA — Execução de obras comerciais e industriais com excelência técnica, planejamento e segurança no Sul do Brasil." />
+  <title>Solid Engenharia & Estruturas LTDA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+  <link rel="apple-touch-icon" href="assets/images/logo.png" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Solid Engenharia & Estruturas LTDA" />
+  <meta property="og:description" content="Execução de obras comerciais e industriais com excelência técnica, planejamento e segurança no Sul do Brasil." />
+  <meta property="og:image" content="assets/images/logo.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="#inicio" class="navbar__logo">
+        <img src="assets/images/logo.png" alt="Solid Engenharia & Estruturas" class="navbar__logo-img" />
+      </a>
+      <nav class="navbar__menu" id="navMenu">
+        <a href="#inicio" class="nav-link">Início</a>
+        <a href="#sobre" class="nav-link">Sobre</a>
+        <a href="#servicos" class="nav-link">Serviços</a>
+        <a href="#mercado" class="nav-link">Mercado</a>
+        <a href="#clientes" class="nav-link">Clientes</a>
+        <a href="#contato" class="nav-link">Contato</a>
+      </nav>
+      <button class="navbar__toggle" id="navToggle" aria-label="Abrir menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="inicio">
+    <div class="hero__overlay"></div>
+    <div class="hero__grid-pattern"></div>
+    <div class="container hero__content">
+      <p class="hero__tag">Fundada em 2018 · Nova Santa Rita / RS</p>
+      <h1 class="hero__title">
+        Resultados sólidos começ&shy;am com<br />
+        <span class="hero__title--accent">engenharia de verdade.</span>
+      </h1>
+      <p class="hero__subtitle">
+        Onde a técnica vira confiança e o projeto vira resultado.
+      </p>
+      <div class="hero__actions">
+        <a href="https://wa.me/5551995756460?text=Ol%C3%A1%2C+gostaria+de+um+or%C3%A7amento!" target="_blank" rel="noopener" class="btn btn--primary">
+          <i class="fab fa-whatsapp"></i> Solicitar Orçamento
+        </a>
+        <a href="#servicos" class="btn btn--outline">
+          Nossos Serviços <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+    <a href="#sobre" class="hero__scroll-down" aria-label="Rolar para baixo">
+      <i class="fas fa-chevron-down"></i>
+    </a>
+  </section>
+
+  <!-- ========== NÚMEROS / DESTAQUES ========== -->
+  <section class="highlights">
+    <div class="container highlights__grid">
+      <div class="highlight-card">
+        <i class="fas fa-hard-hat highlight-card__icon"></i>
+        <span class="highlight-card__num">+7</span>
+        <span class="highlight-card__label">Anos de mercado</span>
+      </div>
+      <div class="highlight-card">
+        <i class="fas fa-building highlight-card__icon"></i>
+        <span class="highlight-card__num">Sul</span>
+        <span class="highlight-card__label">do Brasil em foco</span>
+      </div>
+      <div class="highlight-card">
+        <i class="fas fa-industry highlight-card__icon"></i>
+        <span class="highlight-card__num">100%</span>
+        <span class="highlight-card__label">Obras comerciais e industriais</span>
+      </div>
+      <div class="highlight-card">
+        <i class="fas fa-shield-alt highlight-card__icon"></i>
+        <span class="highlight-card__num">Zero</span>
+        <span class="highlight-card__label">Compromisso com segurança</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SOBRE ========== -->
+  <section class="section sobre" id="sobre">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__tag">Quem somos</span>
+        <h2 class="section__title">A empresa por trás das obras</h2>
+        <p class="section__desc">
+          A Solid Engenharia e Estruturas foi fundada em 2018 com o propósito de entregar obras executadas com rigor técnico, responsabilidade e compromisso com resultados. Estruturada desde o início para atuar em obras comerciais e industriais, a empresa oferece soluções completas que vão da fundação à entrega final.
+        </p>
+        <p class="section__desc">
+          Ao longo de sua trajetória, a Solid consolidou-se pela qualidade na execução, gestão eficiente de obras e relacionamento transparente com clientes e parceiros. Mais do que construir, a Solid constrói confiança — e esse compromisso está presente em cada etapa do trabalho.
+        </p>
+      </div>
+
+      <!-- Missão, Visão e Valores -->
+      <div class="mvv__grid">
+        <div class="mvv-card">
+          <div class="mvv-card__icon">
+            <i class="fas fa-bullseye"></i>
+          </div>
+          <h3 class="mvv-card__title">Missão</h3>
+          <p class="mvv-card__text">
+            Executar obras com excelência técnica, planejamento e segurança, oferecendo soluções completas em engenharia que garantam qualidade, prazo, otimização de custos e soluções para nossos clientes.
+          </p>
+        </div>
+        <div class="mvv-card">
+          <div class="mvv-card__icon">
+            <i class="fas fa-eye"></i>
+          </div>
+          <h3 class="mvv-card__title">Visão</h3>
+          <p class="mvv-card__text">
+            Ser reconhecida como empresa referência em engenharia e estruturas no Sul do Brasil, destacando-se pela confiabilidade, eficiência na gestão de obras e compromisso com a entrega de resultados duradouros.
+          </p>
+        </div>
+        <div class="mvv-card mvv-card--full">
+          <div class="mvv-card__icon">
+            <i class="fas fa-gem"></i>
+          </div>
+          <h3 class="mvv-card__title">Valores</h3>
+          <div class="values-grid">
+            <div class="value-item">
+              <i class="fas fa-check-circle"></i>
+              <div>
+                <strong>Qualidade técnica</strong>
+                <p>Rigor técnico em todas as etapas, da fundação à entrega final.</p>
+              </div>
+            </div>
+            <div class="value-item">
+              <i class="fas fa-check-circle"></i>
+              <div>
+                <strong>Compromisso com prazos</strong>
+                <p>Planejamento e controle para garantir as metas acordadas.</p>
+              </div>
+            </div>
+            <div class="value-item">
+              <i class="fas fa-check-circle"></i>
+              <div>
+                <strong>Ética e transparência</strong>
+                <p>Relações claras, responsáveis e baseadas na confiança.</p>
+              </div>
+            </div>
+            <div class="value-item">
+              <i class="fas fa-check-circle"></i>
+              <div>
+                <strong>Segurança em primeiro lugar</strong>
+                <p>Priorizar a integridade das pessoas em todas as atividades.</p>
+              </div>
+            </div>
+            <div class="value-item">
+              <i class="fas fa-check-circle"></i>
+              <div>
+                <strong>Gestão eficiente</strong>
+                <p>Controle de custos, produtividade e recursos como base dos projetos.</p>
+              </div>
+            </div>
+            <div class="value-item">
+              <i class="fas fa-check-circle"></i>
+              <div>
+                <strong>Foco em soluções</strong>
+                <p>Sempre a melhor solução técnica e econômica para cada etapa da obra.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SERVIÇOS ========== -->
+  <section class="section servicos" id="servicos">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__tag">O que fazemos</span>
+        <h2 class="section__title">Nossos Serviços</h2>
+        <p class="section__desc">
+          Atuamos em todas as frentes da construção comercial e industrial, do planejamento à entrega final.
+        </p>
+      </div>
+      <div class="services__grid">
+        <div class="service-card">
+          <div class="service-card__icon">
+            <i class="fas fa-building"></i>
+          </div>
+          <h3 class="service-card__title">Obras Comerciais e Industriais</h3>
+          <p class="service-card__text">Execução completa de obras comerciais e industriais com planejamento estratégico e rigor técnico em todas as etapas.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">
+            <i class="fas fa-layer-group"></i>
+          </div>
+          <h3 class="service-card__title">Fundações e Infraestrutura</h3>
+          <p class="service-card__text">Fundações sólidas, contenções de encostas e obras de drenagem com segurança e tecnologia adequadas a cada terreno.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">
+            <i class="fas fa-cubes"></i>
+          </div>
+          <h3 class="service-card__title">Estruturas de Concreto Armado</h3>
+          <p class="service-card__text">Projetos e execução de estruturas de concreto armado com controle técnico e qualidade assegurada em cada peça.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">
+            <i class="fas fa-drafting-compass"></i>
+          </div>
+          <h3 class="service-card__title">Estruturas Metálicas</h3>
+          <p class="service-card__text">Montagem e instalação de estruturas metálicas robustas para galpões, cobertas e aplicações industriais diversas.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">
+            <i class="fas fa-tools"></i>
+          </div>
+          <h3 class="service-card__title">Reformas e Adequações</h3>
+          <p class="service-card__text">Reformas, ampliações e adequações industriais com mínima interrupção operacional e máxima eficiência de execução.</p>
+        </div>
+        <div class="service-card service-card--cta">
+          <i class="fas fa-comments service-card--cta__icon"></i>
+          <h3>Tem um projeto em mente?</h3>
+          <p>Fale com nossa equipe e receba uma análise personalizada para sua obra.</p>
+          <a href="https://wa.me/5551995756460?text=Ol%C3%A1%2C+gostaria+de+um+or%C3%A7amento!" target="_blank" rel="noopener" class="btn btn--primary">
+            <i class="fab fa-whatsapp"></i> Falar com especialista
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MERCADO DE ATUAÇÃO ========== -->
+  <section class="section mercado" id="mercado">
+    <div class="container">
+      <div class="mercado__inner">
+        <div class="mercado__text">
+          <span class="section__tag">Onde atuamos</span>
+          <h2 class="section__title">Mercado de Atuação</h2>
+          <p>
+            A Solid Engenharia e Estruturas é especialista na execução de obras comerciais e industriais. Atuamos desde a fundação até a entrega final, garantindo controle total do processo construtivo.
+          </p>
+          <p>
+            Cada projeto é conduzido com planejamento estratégico, gestão eficiente e rigor técnico, assegurando cumprimento de prazos, otimização de custos e máxima confiabilidade.
+          </p>
+          <p>
+            Mais do que construir, entregamos obras sólidas, funcionais e duráveis, que impulsionam o crescimento e a operação dos nossos clientes.
+          </p>
+          <a href="#contato" class="btn btn--primary" style="margin-top: 1.5rem; display: inline-flex;">
+            Entre em contato <i class="fas fa-arrow-right" style="margin-left: .5rem;"></i>
+          </a>
+        </div>
+        <div class="mercado__features">
+          <div class="mercado-feat">
+            <div class="mercado-feat__icon"><i class="fas fa-industry"></i></div>
+            <div>
+              <strong>Obras Industriais</strong>
+              <p>Galpões, plantas industriais e ampliações fabris com gestão completa.</p>
+            </div>
+          </div>
+          <div class="mercado-feat">
+            <div class="mercado-feat__icon"><i class="fas fa-store"></i></div>
+            <div>
+              <strong>Obras Comerciais</strong>
+              <p>Centros comerciais, lojas e empreendimentos com qualidade e prazo.</p>
+            </div>
+          </div>
+          <div class="mercado-feat">
+            <div class="mercado-feat__icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <strong>Sul do Brasil</strong>
+              <p>Atuação consolidada na região Sul, com foco em resultados duradouros.</p>
+            </div>
+          </div>
+          <div class="mercado-feat">
+            <div class="mercado-feat__icon"><i class="fas fa-chart-line"></i></div>
+            <div>
+              <strong>Gestão de ponta a ponta</strong>
+              <p>Do planejamento à entrega final com total controle do processo.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CLIENTES ========== -->
+  <section class="section clientes" id="clientes">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__tag">Quem confia na Solid</span>
+        <h2 class="section__title">Nossos Clientes</h2>
+        <p class="section__desc">Empresas que escolheram a Solid para construir com qualidade, segurança e confiança.</p>
+      </div>
+    </div>
+    <div class="carousel-wrapper">
+      <div class="carousel-track" id="carouselTrack">
+        <!-- Logos originais -->
+        <div class="carousel-item" onclick="openModal('assets/images/Cliente_1_1_LOGO-removebg-preview.png')">
+          <img src="assets/images/Cliente_1_1_LOGO-removebg-preview.png" alt="Cliente 1" />
+        </div>
+        <div class="carousel-item" onclick="openModal('assets/images/Cliente_1_2_2252949492180904-removebg-prev.png')">
+          <img src="assets/images/Cliente_1_2_2252949492180904-removebg-prev.png" alt="Cliente 2" />
+        </div>
+        <div class="carousel-item" onclick="openModal('assets/images/Cliente_1_3_2038551013670509-removebg-prev.png')">
+          <img src="assets/images/Cliente_1_3_2038551013670509-removebg-prev.png" alt="Cliente 3" />
+        </div>
+        <div class="carousel-item" onclick="openModal('assets/images/Cliente_1_4_1873257130731669-removebg-prev.png')">
+          <img src="assets/images/Cliente_1_4_1873257130731669-removebg-prev.png" alt="Cliente 4" />
+        </div>
+        <div class="carousel-item" onclick="openModal('assets/images/Cliente_1_5_1437698071387442-removebg-prev.png')">
+          <img src="assets/images/Cliente_1_5_1437698071387442-removebg-prev.png" alt="Cliente 5" />
+        </div>
+        <div class="carousel-item" onclick="openModal('assets/images/Cliente_1_6_1421477262946421-removebg-prev.png')">
+          <img src="assets/images/Cliente_1_6_1421477262946421-removebg-prev.png" alt="Cliente 6" />
+        </div>
+        <div class="carousel-item" onclick="openModal('assets/images/Cliente_1_7_1420464463164594-removebg-prev.png')">
+          <img src="assets/images/Cliente_1_7_1420464463164594-removebg-prev.png" alt="Cliente 7" />
+        </div>
+        <div class="carousel-item" onclick="openModal('assets/images/Cliente_1_8_1390937196137273-removebg-prev.png')">
+          <img src="assets/images/Cliente_1_8_1390937196137273-removebg-prev.png" alt="Cliente 8" />
+        </div>
+        <div class="carousel-item" onclick="openModal('assets/images/Cliente_1_9_1276550847699148-removebg-prev.png')">
+          <img src="assets/images/Cliente_1_9_1276550847699148-removebg-prev.png" alt="Cliente 9" />
+        </div>
+        <div class="carousel-item" onclick="openModal('assets/images/Cliente_1_10_1273704554647528-removebg-prev.png')">
+          <img src="assets/images/Cliente_1_10_1273704554647528-removebg-prev.png" alt="Cliente 10" />
+        </div>
+        <div class="carousel-item" onclick="openModal('assets/images/Cliente_1_11_948637857812284-removebg-previ.png')">
+          <img src="assets/images/Cliente_1_11_948637857812284-removebg-previ.png" alt="Cliente 11" />
+        </div>
+        <div class="carousel-item" onclick="openModal('assets/images/Cliente_1_12_882367081089703-removebg-previ.png')">
+          <img src="assets/images/Cliente_1_12_882367081089703-removebg-previ.png" alt="Cliente 12" />
+        </div>
+        <!-- Duplicatas para loop infinito -->
+        <div class="carousel-item" onclick="openModal('assets/images/Cliente_1_1_LOGO-removebg-preview.png')">
+          <img src="assets/images/Cliente_1_1_LOGO-removebg-preview.png" alt="Cliente 1" />
+        </div>
+        <div class="carousel-item" onclick="openModal('assets/images/Cliente_1_2_2252949492180904-removebg-prev.png')">
+          <img src="assets/images/Cliente_1_2_2252949492180904-removebg-prev.png" alt="Cliente 2" />
+        </div>
+        <div class="carousel-item" onclick="openModal('assets/images/Cliente_1_3_2038551013670509-removebg-prev.png')">
+          <img src="assets/images/Cliente_1_3_2038551013670509-removebg-prev.png" alt="Cliente 3" />
+        </div>
+        <div class="carousel-item" onclick="openModal('assets/images/Cliente_1_4_1873257130731669-removebg-prev.png')">
+          <img src="assets/images/Cliente_1_4_1873257130731669-removebg-prev.png" alt="Cliente 4" />
+        </div>
+        <div class="carousel-item" onclick="openModal('assets/images/Cliente_1_5_1437698071387442-removebg-prev.png')">
+          <img src="assets/images/Cliente_1_5_1437698071387442-removebg-prev.png" alt="Cliente 5" />
+        </div>
+        <div class="carousel-item" onclick="openModal('assets/images/Cliente_1_6_1421477262946421-removebg-prev.png')">
+          <img src="assets/images/Cliente_1_6_1421477262946421-removebg-prev.png" alt="Cliente 6" />
+        </div>
+        <div class="carousel-item" onclick="openModal('assets/images/Cliente_1_7_1420464463164594-removebg-prev.png')">
+          <img src="assets/images/Cliente_1_7_1420464463164594-removebg-prev.png" alt="Cliente 7" />
+        </div>
+        <div class="carousel-item" onclick="openModal('assets/images/Cliente_1_8_1390937196137273-removebg-prev.png')">
+          <img src="assets/images/Cliente_1_8_1390937196137273-removebg-prev.png" alt="Cliente 8" />
+        </div>
+        <div class="carousel-item" onclick="openModal('assets/images/Cliente_1_9_1276550847699148-removebg-prev.png')">
+          <img src="assets/images/Cliente_1_9_1276550847699148-removebg-prev.png" alt="Cliente 9" />
+        </div>
+        <div class="carousel-item" onclick="openModal('assets/images/Cliente_1_10_1273704554647528-removebg-prev.png')">
+          <img src="assets/images/Cliente_1_10_1273704554647528-removebg-prev.png" alt="Cliente 10" />
+        </div>
+        <div class="carousel-item" onclick="openModal('assets/images/Cliente_1_11_948637857812284-removebg-previ.png')">
+          <img src="assets/images/Cliente_1_11_948637857812284-removebg-previ.png" alt="Cliente 11" />
+        </div>
+        <div class="carousel-item" onclick="openModal('assets/images/Cliente_1_12_882367081089703-removebg-previ.png')">
+          <img src="assets/images/Cliente_1_12_882367081089703-removebg-previ.png" alt="Cliente 12" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTATO ========== -->
+  <section class="section contato" id="contato">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__tag">Fale conosco</span>
+        <h2 class="section__title">Entre em Contato</h2>
+        <p class="section__desc">Estamos prontos para atender você e apresentar a melhor solução para o seu projeto.</p>
+      </div>
+      <div class="contato__grid">
+        <div class="contato__info">
+          <div class="contact-item">
+            <div class="contact-item__icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <strong>Endereço</strong>
+              <p>Rua do Ipê, nº 1792, Berto Círio<br />Nova Santa Rita / RS — CEP: 92480-000</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item__icon"><i class="fas fa-phone-alt"></i></div>
+            <div>
+              <strong>Telefone</strong>
+              <p><a href="tel:+5551995756460">(51) 99575-6460</a></p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item__icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <strong>E-mail</strong>
+              <p><a href="mailto:comercial@solidobraselocacoes.com.br">comercial@solidobraselocacoes.com.br</a></p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item__icon"><i class="fas fa-clock"></i></div>
+            <div>
+              <strong>Horário de Funcionamento</strong>
+              <p>Segunda a Sexta-feira<br />07:30 às 17:18</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item__icon"><i class="fas fa-id-card"></i></div>
+            <div>
+              <strong>CNPJ</strong>
+              <p>30.161.678/0001-17</p>
+            </div>
+          </div>
+          <a href="https://wa.me/5551995756460?text=Ol%C3%A1%2C+gostaria+de+um+or%C3%A7amento!" target="_blank" rel="noopener" class="btn btn--primary btn--whatsapp">
+            <i class="fab fa-whatsapp"></i> Chamar no WhatsApp
+          </a>
+        </div>
+        <div class="contato__map">
+          <iframe
+            src="https://maps.google.com/maps?q=Rua+do+Ipe+1792+Nova+Santa+Rita+RS&output=embed"
+            width="100%"
+            height="100%"
+            style="border:0; border-radius: 12px;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Localização Solid Engenharia">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img src="assets/images/logo.png" alt="Solid Engenharia & Estruturas" class="footer__logo-img" />
+        <p class="footer__slogan">"Resultados sólidos começam com engenharia de verdade."</p>
+        <div class="footer__social">
+          <a href="https://www.instagram.com/solid_e.e/" target="_blank" rel="noopener" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://wa.me/5551995756460" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+      <div class="footer__links">
+        <h4>Navegação</h4>
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#mercado">Mercado</a>
+        <a href="#contato">Contato</a>
+      </div>
+      <div class="footer__links">
+        <h4>Serviços</h4>
+        <a href="#servicos">Obras Comerciais e Industriais</a>
+        <a href="#servicos">Fundações e Infraestrutura</a>
+        <a href="#servicos">Estruturas de Concreto</a>
+        <a href="#servicos">Estruturas Metálicas</a>
+        <a href="#servicos">Reformas e Adequações</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <p>© 2024 Solid Engenharia & Estruturas LTDA · CNPJ: 30.161.678/0001-17</p>
+        <p>Nova Santa Rita / RS — Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== WHATSAPP FLUTUANTE ========== -->
+  <a href="https://wa.me/5551995756460?text=Ol%C3%A1%2C+gostaria+de+um+or%C3%A7amento!" target="_blank" rel="noopener" class="whatsapp-float" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- ========== MODAL LOGO CLIENTE ========== -->
+  <div class="modal-overlay" id="modalOverlay" onclick="closeModal()">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal()" aria-label="Fechar"><i class="fas fa-times"></i></button>
+      <img src="" alt="Logo do cliente" id="modalImg" class="modal-img" />
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
